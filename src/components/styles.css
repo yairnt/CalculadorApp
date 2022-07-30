@@ -1,6 +1,6 @@
 .boton-contenedor {
   height: 83px;
-  display:flex;
+  display: flex;
   flex: 1 1;
   justify-content: center;
   align-items: center;
@@ -12,15 +12,14 @@
   border: 2px solid white;
   margin: 4px;
   cursor: pointer;
-  user-select:none;
+  user-select: none;
 }
 
-.boton-contenedor:hover{
+.boton-contenedor:hover {
   background-color: #5a01a7;
-
 }
 
-.operador:hover{
+.operador:hover {
   background-color: #ff6600;
 }
 
@@ -32,13 +31,13 @@
   height: 75px;
   border-radius: 50px;
   margin-bottom: 20px;
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   align-items: center;
   font-weight: bold;
   font-size: 30px;
   background-color: #0a0a23;
-  color:white;
+  color: white;
   padding: 11px;
   padding-right: 11px 30px 11px 11px;
   margin: 1px solid #888;
@@ -48,18 +47,18 @@
 .boton-clear {
   height: 80px;
   font-size: 1.6em;
-  display:flex;
+  display: flex;
   flex: 1;
   background-color: #ac0202;
   margin-top: 8px;
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  color:white;
+  color: white;
   border: 2px solid white;
-  cursor:pointer;
+  cursor: pointer;
   border-radius: 45px;
-  user-select:none;
+  user-select: none;
 }
 
 .boton-clear:hover {

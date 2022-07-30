@@ -1,77 +1,55 @@
-import './App.css';
-import Buttons from './components/Buttons';
-import ClearButton from './components/ClearButton';
-import InputValue from './components/InputValue';
-import {useState} from 'react';
-import {evaluate} from 'mathjs';
+import "./App.css";
+import Buttons from "./components/Buttons";
+import ClearButton from "./components/ClearButton";
+import InputValue from "./components/InputValue";
+import { useState } from "react";
+import { evaluate } from "mathjs";
 
 function App() {
+  const [input, setInput] = useState("0");
 
-  const[input, setInput] = useState('0');
-  
-  const agregarInput = val => {
-    
-    if (input === '0'){
+  const agregarInput = (val) => {
+    if (input === "0") {
       setInput(val);
-    }
-
-   /* else if ((val === '+' ||
-              val === '-' ||
-              val === '/' ||
-              val === '*' ) && (
-              input.includes('+') ||
-              input.includes('-') ||
-              input.includes('*') ||
-              input.includes('/') )) {
-              if (input.substring(input.length - 1) === '+'){
-                setInput(input.substring(0,input.length-1))
-                
-              }
-              return setInput(evaluate(input)+val)
-              
-    }*/
-      else if (input.match(/(\+|\-|\/|\*)/g) && val.match(/(\+|\-|\/|\*)/g)) {
-        if (input.substring(input.length-1).match(/(\+|\-|\/|\*)/g)) {
-         setInput(input.substring(0,input.length-1)+val) 
-        }
-        else{ 
-        return setInput(evaluate(input)+val)
+    } else if (input.match(/(\+|-|\/|\*)/g) && val.match(/(\+|-|\/|\*)/g)) {
+      if (input.substring(input.length - 1).match(/(\+|-|\/|\*)/g)) {
+        setInput(input.substring(0, input.length - 1) + val);
+      } else {
+        return setInput(evaluate(input) + val);
       }
-    }
-
-      else if (
-        val === '+' ||
-        val === '-' ||
-        val === '*' ||
-        val === '/' ) {
+    } else if (val === "+" || val === "-" || val === "*" || val === "/") {
       if (
-        input[input.length-1] === '+' ||
-        input[input.length-1] === '-' ||
-        input[input.length-1] === '*' ||
-        input[input.length-1] === '/' ) {
-        setInput( () => input.replace(input[input.length-1], val) )
-       }
-        else{
-        setInput(input + val)
-      } 
-    } else setInput(input + val)
+        input[input.length - 1] === "+" ||
+        input[input.length - 1] === "-" ||
+        input[input.length - 1] === "*" ||
+        input[input.length - 1] === "/"
+      ) {
+        setInput(() => input.replace(input[input.length - 1], val));
+      } else {
+        setInput(input + val);
+      }
+    } else setInput(input + val);
   };
-  
-  const calcularResultado = () =>{
-    if (input[input.length-1] === '+' || input[input.length-1] === '-' || input[input.length-1] === '*' || input[input.length-1] === '/' ){
-      alert('Ingrese valor correctamente')
+
+  const calcularResultado = () => {
+    if (
+      input[input.length - 1] === "+" ||
+      input[input.length - 1] === "-" ||
+      input[input.length - 1] === "*" ||
+      input[input.length - 1] === "/"
+    ) {
+      alert("Ingrese valor correctamente");
+    } else if (input) {
+      setInput(evaluate(input) + "");
+    } else {
+      alert("Ingrese numero");
     }
-    else if (input) {
-      setInput(evaluate(input)+"");
-    } else{
-      alert('Ingrese numero');
-    }
-  }
+  };
 
   return (
     <div className="App">
       <h1 className="mainTitle"> CalculadorApp </h1>
-      
+
       <div className="cal-content">
         <InputValue input={input} />
 
@@ -104,13 +82,10 @@ function App() {
         </div>
 
         <div className="fila">
-          <ClearButton handleClear={ () => setInput('') }>
-            Clear
-          </ClearButton>
+          <ClearButton handleClear={() => setInput("")}>Clear</ClearButton>
         </div>
       </div>
     </div>
-
   );
 }
 
