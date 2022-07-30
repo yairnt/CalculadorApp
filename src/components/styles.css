@@ -1,0 +1,67 @@
+.boton-contenedor {
+  height: 83px;
+  display:flex;
+  flex: 1 1;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 38px;
+  background-color: #1b1b32;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid white;
+  margin: 4px;
+  cursor: pointer;
+  user-select:none;
+}
+
+.boton-contenedor:hover{
+  background-color: #5a01a7;
+
+}
+
+.operador:hover{
+  background-color: #ff6600;
+}
+
+.operador {
+  background-color: rgba(1, 30, 0, 0.733);
+}
+
+.input {
+  height: 75px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: #0a0a23;
+  color:white;
+  padding: 11px;
+  padding-right: 11px 30px 11px 11px;
+  margin: 1px solid #888;
+  box-shadow: 1px 1px 1px 1px white;
+}
+
+.boton-clear {
+  height: 80px;
+  font-size: 1.6em;
+  display:flex;
+  flex: 1;
+  background-color: #ac0202;
+  margin-top: 8px;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color:white;
+  border: 2px solid white;
+  cursor:pointer;
+  border-radius: 45px;
+  user-select:none;
+}
+
+.boton-clear:hover {
+  background-color: #ebb000;
+}
